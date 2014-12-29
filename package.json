@@ -1,6 +1,6 @@
 {
   "name": "cheque",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Type checking for when you only use JavaScript's Good Parts.",
   "author": "Lim Yuan Qing",
   "license": "MIT",
