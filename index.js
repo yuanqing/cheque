@@ -14,7 +14,7 @@ var cheque = {
     return x === true || x === false;
   },
 
-	isFloat: function(x) { // a float is also an integer
+	isFloat: function(x) { // an integer is also a float
     return typeof x == 'number' && isFinite(x);
 	},
 
