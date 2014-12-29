@@ -56,14 +56,14 @@ You must *not* do things like:
 ```js
 var boo = new Boolean(true);
 var bad = new Number(42);
-var no  = new String('foo');
+var noo  = new String('foo');
 ```
 
 Instead, do:
 ```js
-var yay  = true;
-var good = 42;
-var yes  = 'foo';
+var yay = true;
+var god = 42;
+var yes = 'foo';
 ```
 
 [There are tests you can read.](https://github.com/yuanqing/cheque/blob/master/test)
