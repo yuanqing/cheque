@@ -78,6 +78,8 @@ $ npm i --save cheque
 
 ## Changelog
 
+- 0.2.0
+  - Add polyfill for `Array.isArray`
 - 0.1.0
   - Initial release
 
