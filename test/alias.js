@@ -1,9 +1,9 @@
 var test = require('tape');
 var check = require('..');
 
-test('isInteger', function(t) {
+test('alias', function(t) {
 
-  t.equal(check.isInteger, check.isInt);
+  t.equal(check.isInt, check.isInteger);
 
   t.end();
 
