@@ -1,7 +1,12 @@
 'use strict';
 
+var nativeIsArray = Array.isArray;
+Array.isArray = null;
+
 var tape = require('tape');
 var fn = require('..').isArray;
+
+Array.isArray = nativeIsArray;
 
 tape('isArray', function(t) {
   t.notOk(fn(undefined), 'undefined');

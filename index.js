@@ -1,6 +1,6 @@
 'use strict';
 
-var cheque = {
+module.exports = {
 
   isUndefined: function(x) {
     return typeof x == 'undefined';
@@ -34,12 +34,12 @@ var cheque = {
     return typeof x == 'object' && !!x && x.constructor === Object;
   },
 
-  isArray: Array.isArray,
+  isArray: Array.isArray || function(x) {
+    return Object.prototype.toString.call(x) == '[object Array]';
+  },
 
   isFunction: function(x) {
     return typeof x == 'function';
   }
 
 };
-
-module.exports = cheque;
