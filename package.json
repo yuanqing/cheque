@@ -1,7 +1,7 @@
 {
   "name": "cheque",
   "version": "0.1.1",
-  "description": "Type checking for when you only use JavaScript's Good Parts.",
+  "description": "Type checking, for when you only use JavaScript's Good Parts.",
   "author": "Lim Yuan Qing",
   "license": "MIT",
   "repository": {
