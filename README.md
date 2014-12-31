@@ -7,6 +7,10 @@
 ```js
 'use strict';
 
+var isInt = function(x) {
+  return typeof x == 'number' && x % 1 === 0;
+};
+
 module.exports = {
 
   isUndefined: function(x) {
@@ -25,9 +29,8 @@ module.exports = {
     return typeof x == 'number' && isFinite(x);
   },
 
-  isInteger: function(x) {
-    return typeof x == 'number' && x % 1 === 0;
-  },
+  isInt: isInt,
+  isInteger: isInt,
 
   isString: function(x) {
     return typeof x == 'string';
