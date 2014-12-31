@@ -1,10 +1,5 @@
-var nativeIsArray = Array.isArray;
-Array.isArray = null;
-
 var test = require('tape');
-var fn = require('..').isArray;
-
-Array.isArray = nativeIsArray;
+var fn = require('recoil')('..', { obj: Array, key: 'isArray' }).isArray;
 
 test('isArray', function(t) {
 
