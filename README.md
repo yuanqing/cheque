@@ -22,6 +22,7 @@ cheque.isFunction(function() {}); //=> true
 ```
 
 Some things to note:
+
 1. `isFloat` returns `true` for integers too.
 2. `isObject` returns `true` for &ldquo;plain&rdquo; objects only.
 
@@ -36,6 +37,7 @@ var isObject = require('cheque/is-object');
 ## Caveat emptor
 
 You must *not* do terrible things like:
+
 ```js
 var boo = new Boolean(true);
 var bad = new Number(42);
@@ -43,6 +45,7 @@ var noo = new String('foo');
 ```
 
 Instead, do:
+
 ```js
 var yay = true;
 var god = 42;
