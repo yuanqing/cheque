@@ -1,5 +1,5 @@
 var test = require('tape');
-var fn = require('recoil')('..', { obj: Array, key: 'isArray' }).isArray;
+var fn = require('recoil')('../is-array', { obj: Array, key: 'isArray' });
 
 test('isArray', function(t) {
 

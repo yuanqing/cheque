@@ -1,48 +1,17 @@
 'use strict';
 
-var isInt = function(x) {
-  return typeof x == 'number' && x % 1 === 0;
-};
+var isInteger = require('./is-integer');
 
 module.exports = {
-
-  isUndefined: function(x) {
-    return typeof x == 'undefined';
-  },
-
-  isNull: function(x) {
-    return x === null;
-  },
-
-  isBoolean: function(x) {
-    return x === true || x === false;
-  },
-
-  isFloat: function(x) { // an integer is also a float
-    return typeof x == 'number' && isFinite(x);
-  },
-
-  isInt: isInt,
-  isInteger: isInt,
-
-  isString: function(x) {
-    return typeof x == 'string';
-  },
-
-  isNaN: function(x) {
-    return x != x;
-  },
-
-  isObject: function(x) { // a "plain" object
-    return typeof x == 'object' && !!x && x.constructor === Object;
-  },
-
-  isArray: Array.isArray || function(x) {
-    return Object.prototype.toString.call(x) == '[object Array]';
-  },
-
-  isFunction: function(x) {
-    return typeof x == 'function';
-  }
-
+  isUndefined: require('./is-undefined'),
+  isNull: require('./is-null'),
+  isBoolean: require('./is-boolean'),
+  isFloat: require('./is-float'),
+  isInt: isInteger,
+  isInteger: isInteger,
+  isString: require('./is-string'),
+  isNaN: require('./is-nan'),
+  isObject: require('./is-object'),
+  isArray: require('./is-array'),
+  isFunction: require('./is-function')
 };

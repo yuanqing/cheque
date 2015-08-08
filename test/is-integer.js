@@ -1,7 +1,7 @@
 var test = require('tape');
-var fn = require('..').isInt;
+var fn = require('..').isInteger;
 
-test('isInt', function(t) {
+test('isInteger', function(t) {
 
   // undefined
   t.notOk(fn(undefined), 'undefined');
