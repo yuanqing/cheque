@@ -1,59 +1,39 @@
-# Cheque.js [![npm Version](http://img.shields.io/npm/v/cheque.svg?style=flat)](https://www.npmjs.org/package/cheque) [![Build Status](https://img.shields.io/travis/yuanqing/cheque.svg?style=flat)](https://travis-ci.org/yuanqing/cheque) [![Coverage Status](https://img.shields.io/coveralls/yuanqing/cheque.svg?style=flat)](https://coveralls.io/r/yuanqing/cheque)
+# cheque.js [![npm Version](http://img.shields.io/npm/v/cheque.svg?style=flat)](https://www.npmjs.org/package/cheque) [![Build Status](https://img.shields.io/travis/yuanqing/cheque.svg?style=flat)](https://travis-ci.org/yuanqing/cheque) [![Coverage Status](https://img.shields.io/coveralls/yuanqing/cheque.svg?style=flat)](https://coveralls.io/r/yuanqing/cheque)
 
 > Type checking, for when you only use JavaScript&rsquo;s [Good Parts](https://youtu.be/hQVTIJBZook).
 
-## API
+## Usage
 
 ```js
-'use strict';
+var cheque = require('cheque');
 
-var isInt = function(x) {
-  return typeof x == 'number' && x % 1 === 0;
-};
-
-module.exports = {
-
-  isUndefined: function(x) {
-    return typeof x == 'undefined';
-  },
-
-  isNull: function(x) {
-    return x === null;
-  },
-
-  isBoolean: function(x) {
-    return x === true || x === false;
-  },
-
-  isFloat: function(x) { // an integer is also a float
-    return typeof x == 'number' && isFinite(x);
-  },
-
-  isInt: isInt,
-  isInteger: isInt,
-
-  isString: function(x) {
-    return typeof x == 'string';
-  },
-
-  isNaN: function(x) {
-    return x != x;
-  },
-
-  isObject: function(x) { // a "plain" object
-    return typeof x == 'object' && !!x && x.constructor === Object;
-  },
-
-  isArray: Array.isArray || function(x) {
-    return Object.prototype.toString.call(x) == '[object Array]';
-  },
-
-  isFunction: function(x) {
-    return typeof x == 'function';
-  }
-
-};
+cheque.isUndefined(undefined);    //=> true
+cheque.isNull(null);              //=> true
+cheque.isBoolean(true);           //=> true
+cheque.isFloat(42);               //=> true
+cheque.isFloat(3.14);             //=> true
+cheque.isInteger(42);             //=> true
+cheque.isString('foo');           //=> true
+cheque.isNaN(NaN);                //=> true
+cheque.isObject({});              //=> true
+cheque.isObject([]);              //=> false
+cheque.isArray([]);               //=> true
+cheque.isFunction(function() {}); //=> true
 ```
+
+Some things to note:
+1. `isFloat` returns `true` for integers too.
+2. `isObject` returns `true` for &ldquo;plain&rdquo; objects only.
+
+[There are lots of tests.](test)
+
+If you like, you can `require` the functions individually. For example:
+
+```js
+var isObject = require('cheque/is-object');
+```
+
+## Caveat emptor
 
 You must *not* do terrible things like:
 ```js
@@ -69,18 +49,18 @@ var god = 42;
 var yes = 'foo';
 ```
 
-[There are lots of tests.](https://github.com/yuanqing/cheque/blob/master/test)
-
 ## Installation
 
 Install via [npm](https://www.npmjs.org/):
 
-```bash
+```
 $ npm i --save cheque
 ```
 
 ## Changelog
 
+- 0.3.0
+  - Move functions into separate files
 - 0.2.0
   - Add polyfill for `Array.isArray`
 - 0.1.0
@@ -88,4 +68,4 @@ $ npm i --save cheque
 
 ## License
 
-[MIT license](https://github.com/yuanqing/cheque/blob/master/LICENSE)
+[MIT](LICENSE.md)
