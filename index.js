@@ -1,5 +1,3 @@
-'use strict';
-
 var isInteger = require('./is-integer');
 
 module.exports = {
